@@ -19,14 +19,14 @@ export default function DestinationdetailsDelet({id}:{id:string}) {
     
     const handledelet = async () => {
         console.log(id)
-        const res = await fetch(`http://localhost:5000/add-destination/${id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/add-destination/${id}`, {
             method: "DELETE",
             
 
         })
         const data = await res.json()
         console.log(data)
-        redirect("http://localhost:3000/destination")
+        redirect(`${process.env.BETTER_AUTH_URL}/destination`)
         
     }
     return (

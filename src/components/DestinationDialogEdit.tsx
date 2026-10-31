@@ -102,7 +102,7 @@ export default function DestinationDialogEdit({
     const token = await gettokenformserverClient()
     try {
       const res = await fetch(
-        `http://localhost:5000/add-destination/${destination._id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/add-destination/${destination._id}`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json", 

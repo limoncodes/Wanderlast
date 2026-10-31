@@ -50,7 +50,7 @@ export default function Featurection() {
 
   useEffect(() => {
     let cancelled = false
-    fetch("http://localhost:5000/featured-destination")
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/featured-destination`)
       .then((res) => res.json())
       .then((json: FeaturedDestination[]) => {
         if (!cancelled) {
